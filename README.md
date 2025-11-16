@@ -1,23 +1,67 @@
-# Q-Slot Intelligent Ration Queue Management System
+# Q-Slot-Intelligent-Ration-Queue-Management-System
+
 ## Overview
 
-The Q-Slot Intelligent Ration Queue Management System is a smart solution that automates ration distribution and queue management. It provides an efficient slot-booking mechanism to reduce waiting times, optimize resource allocation, and improve service quality in ration shops.
+The Q-Slot system is a smart, web-based queue and ration token management platform developed using Python (Flask) and Twilio SMS API. It aims to modernize the Public Distribution System (PDS) by digitizing the allocation of time slots for ration collection and reducing congestion, mismanagement, and inefficiencies at ration shops.
 
 
-## Key Features
+## Screenshot
 
-**Smart Slot Booking**: Allows customers to reserve ration collection slots online.
+### **STEP 1**: Smart Ration Distribution portal
 
-**Queue Optimization**:  Predicts and manages crowd flow using real-time data.
+<img width="1212" height="662" alt="image" src="https://github.com/user-attachments/assets/1cc81200-cc59-4d56-902e-58f7f429ed75" />
 
-**Admin Dashboard**:  Helps ration shop managers monitor user activity and manage queues.
 
-**Notifications**:  Sends SMS or email alerts for slot confirmations and updates.
+### **STEP 2**: User Registration
 
-**User Authentication**:  Secure login and registration for customers and admins.
+<img width="1248" height="701" alt="image" src="https://github.com/user-attachments/assets/5a1adbd3-f22e-4d0f-a7e4-aa07f4f8c49b" />
+
+
+### **STEP 3**: User Login
+
+<img width="1250" height="702" alt="image" src="https://github.com/user-attachments/assets/411ae516-5077-4d45-bca9-bdbb65bd62b8" />
+
+
+### **STEP 4**: Available Inventory
+
+<img width="1146" height="663" alt="image" src="https://github.com/user-attachments/assets/1080c20d-cbdc-40dc-baa0-44a1a92ee0ae" />
+
+
+### **STEP 5**: Select Time Slot For Purchase
+
+<img width="1244" height="700" alt="image" src="https://github.com/user-attachments/assets/147bbe43-bca2-47f3-93f9-33ed47dfb204" />
+
+
+### **STEP 6**: Token Generation
+
+<img width="1200" height="675" alt="image" src="https://github.com/user-attachments/assets/69f1c5b7-72ec-4adf-8345-0022837bb22f" />
+
+
+### **STEP 7**: Admin Dashboard
+
+<img width="1225" height="689" alt="image" src="https://github.com/user-attachments/assets/1febb724-6c33-45af-b44e-588d4d5d9e01" />
+
+
+### **STEP 8**: SMS From Your Twilio Account
+
+<img width="1009" height="807" alt="image" src="https://github.com/user-attachments/assets/4a0749a6-9090-4e78-8eaa-980376976ce8" />
+
+
+## Features
+
+- **Smart Slot Booking**: Allows customers to reserve ration collection slots online.
+
+- **Queue Optimization**:  Predicts and manages crowd flow using real-time data.
+
+- **Admin Dashboard**:  Helps ration shop managers monitor user activity and manage queues.
+
+- **Notifications**:  Sends SMS or email alerts for slot confirmations and updates.
+
+- **User Authentication**:  Secure login and registration for customers and admins.
 
 
 ##  How It Works
+
 1.**User Registration & Login** – Users sign up through the web portal.
    
 2.**Smart Slot Booking** – System analyzes queue data and predicts optimal time slots. 
@@ -29,62 +73,8 @@ The Q-Slot Intelligent Ration Queue Management System is a smart solution that a
 5.**Real-Time Notifications** – Users receive updates about their token status and slot timing.
 
 
-## Tech Stack
-
-**Frontend**: HTML, CSS, JavaScript
-
-**Backend**: Python (Flask Framework)\Django
-
-**Database**: MySQL
-
-**Libraries/Tools**: Twilio API (for notifications), dotenv, smtplib
-
-
-## Installation & Setup
-
-1.**Clone the Repository**
-
-git clone https://github.com/Sanjay9923/Q-Slot-Intelligent-Ration-Queue-Management-System.git
-cd Q-Slot-Intelligent-Ration-Queue-Management-System
-
-
-2.**Create a Virtual Environment**:
-
-python -m venv venv
-venv\Scripts\activate
-
-
-3.**Install Required Packages**:
-
-pip install -r requirements.txt
-
-
-4.**Set Environment Variables**:
-Create a .env file in the project root with:
-
-TWILIO_ACCOUNT_SID=your_sid_here
-
-TWILIO_AUTH_TOKEN=your_token_here
-
-TWILIO_PHONE_NUMBER=your_twilio_number
-
-GMAIL_USER=your_email
-
-GMAIL_PASSWORD=your_app_password
-
-FLASK_SECRET_KEY=your_secret_key
-
-
-5.**Run the Application**:
-
-python app.py
-
-
-6.**Access the App**:
-Open your browser and go to http://127.0.0.1:5000/
-
-
 ## Project Structure
+
 Q-Slot Intelligent Ration Queue Management System/
 │
 
@@ -103,32 +93,156 @@ Q-Slot Intelligent Ration Queue Management System/
 └── .env (hidden)         # Environment variables
 
 
-## System Architecture
+## Getting Started
 
-User → Web Interface (Flask App)
-        ↕
-   MySQL Database
-        ↕
-IoT Sensors → Data → Flask Backend → Machine Learning Model
+1.**Open the Project Folder**
+
+Launch Visual Studio Code (VS Code) and open the folder containing the following files and subfolders:
+•	app.py
+•	templates/ (HTML pages like register.html, login.html, dashboard.html)
+•	static/ (CSS/JS if present)
+•	Model files: queue_model.pkl, preprocessor.pkl, etc.
+•	Database files.
+
+2.**Install Python (3.x Recommended)**
+
+•	Visit: https://www.python.org/downloads/
+•	Download and install Python 3.x
+•	 Check "Add Python to PATH" during setup
+
+3.**Install Required Python Libraries**
+
+Open terminal in VS Code and run:
+bash
+CopyEdit
+pip install flask flask-login flask-mail
+numpy pandas
+tensorflow keras
+twilio mysql-connector-python
+		
+4.**Verify Required Files Are Present**
+
+Ensure these core files and folders exist in your project:
+•	 app.py (main server logic)
+•	 HTML files (register.html, login.html, etc.)
+•	 queue_model.pkl, preprocessor.pkl, priority_scheduler.py
+•	 Firebase or MySQL config
+•	 Twilio account setup (SID, Auth Token, phone number)
+
+5.**Set Up Database**
+
+•	MySQL: Create tables for users, tokens, inventory using a provided SQL script
+•	Or connect Firebase Realtime DB with credentials if using Firebase
+
+6.**Configure Twilio & Email**
+
+In app.py, configure Twilio like:
+python
+CopyEdit
+from twilio.rest import Client
+client = Client(account_sid, auth_token)
+client.messages.create(
+    		body="Your token is: XYZ123",
+    		from_='+1234567890',
+  		to='+91XXXXXXXXXX'
+)
+Set up SMTP for email alerts using flask_mail.
+
+7.**Run the Application**
+
+Start the Flask server:
+bash
+CopyEdit
+python app.py
+
+8.**Access Web Interface**
+
+Open your browser and visit:
+http
+CopyEdit
+http://127.0.0.1:5000/
+•	Register using your ration card number.
+•	Enter OTP (if implemented).
+•	Log in and proceed.
+
+9.**Book Slot and Generate Token**
+
+•	Select a time slot for ration pickup.
+•	If users ≤ 30, token is generated and sent via SMS.
+•	Elderly are auto-prioritized.
+•	Token valid for 20 minutes only.
+
+10.**Admin Dashboard**
+
+Admin logs in separately to:
+•	View and manage all bookings
+•	Track inventory stock levels
+•	Update available items
+•	See active/inactive tokens
+
+11.**Real-Time Notifications**
+
+•	Users receive SMS/email when slot starts or their turn nears.
+•	Uses Twilio API and Flask-Mail for alerts.
+
+12.**AI-Powered Queue Optimization**
+
+•	LSTM/RNN model in queue_model.pkl:
+o	Predicts user traffic
+o	Adjusts slot timing dynamically
+o	Prioritizes elderly using priority_scheduler.py
+
+13.**Execution Complete**
+
+You’ve now run the full Q-Slot Intelligent Ration Queue Management System with:
+•	Real-time token and SMS notifications
+•	Admin dashboard
+•	AI queue prediction
+•	Priority scheduling for elderly
+
+
+## Technologies Used
+
+**Programming Languages**: Python, HTML, CSS, JavaScript, SQL
+
+**Frameworks & Libraries**: Flask/Django, NumPy, Pandas, TensorFlow, Keras, Scikit-learn, Bootstrap
+
+**Database**: SQLite / MySQL
+
+**APIs**: Twilio API, SMTP (Flask-Mail)
+
+**Notifications Tools**: Twilio (SMS), SMTP (Email)
+
+**Deep Learning**: TensorFlow, Keras (LSTM/RNN models)
 
 
 ## Future Improvements
 
-Develop a mobile app for users.
+- Add a mobile app for easier token booking and queue tracking.
 
-Integrate biometric verification for identity checks.
+- Implement QR-code tokens for faster and secure user verification at ration shops.
 
-Enable multilingual support.
+- Integrate multi-language support to improve accessibility for all users.
 
-Add analytics dashboard for queue prediction trends.
+- Enhance queue prediction using improved LSTM/RNN models for accurate wait-time forecasting.
+
+- Develop an admin analytics dashboard to visualize queue trends, user flow, and inventory data.
+
+- Enable automated SMS/email reminders to notify users before their slot time and reduce missed appointments.
 
 
-## Project Contributor
+## Author
 
-**Sanjay.s** – Developer & Project Lead
+Sanjay S. — Developer & Project Lead
 
-Open for contributions! Feel free to submit pull requests or suggest improvements.
+This project was developed as part of our final-year college curriculum. Our team of three collaboratively worked on designing, developing, and completing this project.
 
-## License
+Contributions from the open-source community are also welcome. Feel free to submit pull requests or suggest improvements.
 
-This project is open-source and available under the MIT License.
+
+### License
+
+This project is **free to use** and does not contains any license.
+
+
+
