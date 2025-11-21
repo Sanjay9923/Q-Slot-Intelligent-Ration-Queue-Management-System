@@ -181,7 +181,7 @@ python app.py
 
 ## Author
 
-Sanjay S — Developer & Project Lead
+Sanjay.s — Developer & Project Lead
 
 This project was developed as part of our final-year college curriculum. Our team of three collaboratively worked on designing, developing, and completing this project.
 
